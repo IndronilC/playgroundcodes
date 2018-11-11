@@ -1,0 +1,17 @@
+/* These seed data are for account_users which is the master table of user currently a little flat housing the customer_id and password which should have been placed in security related database */
+INSERT INTO account_users (login_user_name, user_name, password, date_of_birth, address, creation_date, updation_date, version) VALUES ('1111111111', 'Orianthi Panagris', '12345$$$', CURRENT_DATE(), 'Leeuwenburg  Room A14.28 Weesperstraat 190 1097 DZ Amsterdam P.O. box 233 1000 AE Amsterdam', CURRENT_DATE(),NULL, 1)
+INSERT INTO account_users (login_user_name, user_name, password, date_of_birth, address, creation_date, updation_date, version) VALUES ('1111111112', 'Freddie Mercury', '12345$$$#', CURRENT_DATE(), 'Leeuwenburg  Room A16.28 Weesperstraat 190 1098 DZ Amsterdam P.O. box 233 1000 AE Amsterdam', CURRENT_DATE(),NULL, 2)
+INSERT INTO account_users (login_user_name, user_name, password, date_of_birth, address, creation_date, updation_date, version) VALUES ('1111111113', 'Jimie Hendrix', '12345$$$##', CURRENT_DATE(), 'Leeuwenburg  Room A17.28 Weesperstraat 190 1099 DZ Amsterdam P.O. box 233 1100 AE Amsterdam', CURRENT_DATE(),NULL, 3)
+INSERT INTO account_users (login_user_name, user_name, password, date_of_birth, address, creation_date, updation_date, version) VALUES ('1111111114', 'Buddy Guy', '12345$$##', CURRENT_DATE(), 'Leeuwenburg  Room A18.28 Weesperstraat 190 1100 DZ Amsterdam P.O. box 233 1100 AE Amsterdam', CURRENT_DATE(),NULL, 4)
+
+/* These seed data is for the account master as currently we do not have an account management module through which we perform DML operation as part of the Application */
+INSERT INTO account_details_master (customer_id, account_number, account_type, balance, creation_date, updation_date, version) VALUES ('1111111111', 'NL93ABNA0585619023', 'Savings', 44.85, CURRENT_DATE(),NULL, 1)
+INSERT INTO account_details_master (customer_id, account_number, account_type, balance, creation_date, updation_date, version) VALUES ('1111111112', 'NL69ABNA0433647324', 'Savings', 45.59, CURRENT_DATE(),NULL, 2)
+INSERT INTO account_details_master (customer_id, account_number, account_type, balance, creation_date, updation_date, version) VALUES ('1111111113', 'NL27SNSB0917829871', 'Savings', 105.11, CURRENT_DATE(),NULL, 3)
+INSERT INTO account_details_master (customer_id, account_number, account_type, balance, creation_date, updation_date, version) VALUES ('1111111114', 'NL90ABNA0585647886', 'Savings', 32.76, CURRENT_DATE(),NULL, 4)
+
+/* These seed data is to have the minimum data that will be required in the transactions table */
+/* For H2 Number and string are not accepting null for the transaction_reference column, so kept them with dummy value */
+INSERT INTO account_transaction_details (transaction_reference, account_number, customer_id, start_balance, mutation, end_balance, creation_date, updation_date, version) VALUES (0, 'NL93ABNA0585619023', '1111111111', 44.85, NULL, NULL, CURRENT_DATE(),NULL, 1)
+INSERT INTO account_transaction_details (transaction_reference, account_number, customer_id, start_balance, mutation, end_balance, creation_date, updation_date, version) VALUES (1, 'NL69ABNA0433647324', '1111111112', 45.59, NULL, NULL, CURRENT_DATE(),NULL, 2)
+INSERT INTO account_transaction_details (transaction_reference, account_number, customer_id, start_balance, mutation, end_balance, creation_date, updation_date, version) VALUES (2, 'NL27SNSB0917829871', '1111111113', 105.11, NULL, NULL, CURRENT_DATE(),NULL, 3)
